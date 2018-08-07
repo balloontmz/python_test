@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+from datetime import datetime, timedelta, timezone
+
+now = datetime.now() # 获取当前时间
+print('----part1 datetime \n%s' % now)
+print(type(now))
+b =datetime.utcnow()
+print('%s,now' % b)
+print('\n----part2 datetime转换为timestamp，然后timestamp转换为当前时区以及初始时区的datetime')
+dt = datetime(2018, 3, 22, 11, 12, 0, 900000)
+print(dt)
+print(dt.timestamp())
+t = dt.timestamp()
+
+print(datetime.fromtimestamp(t))
+print(datetime.utcfromtimestamp(t))
+print(datetime.utcnow())
+print('\n----part3 str转换为datetime')
+str_time = '2018-6-20 11:11:11'
+cday = datetime.strptime(str_time, '%Y-%m-%d %H:%M:%S')
+print(cday)
+print(cday.timestamp())
+print('\n----part4 datetime转换为str')
+print(now.strftime('%a, %b, %m-%d,%H:%M:%S'))
+print('\n----part5 时间加减')
+print(now)
+print(now + timedelta(hours=10, days=2))
+print('\n----part6 为datetime加上tzinfo参数，应该加与本地时区一致的参数')
+tz_utc_8 =timezone(timedelta(hours=8))
+print(now)
+print(now.tzinfo)
+dt = now.replace(tzinfo=tz_utc_8) # 强行设置时区，如果不是本地时区，那么此时间已经不是本地时间，而是本地时间加上时区差
+print(dt)
+print('\n----part7 带时区的datetime之间相互转换')
+utc_time = datetime.utcnow().replace(tzinfo=timezone.utc)
+print(utc_time)
+bj_time = utc_time.astimezone(timezone(timedelta(hours=8)))
+print(bj_time)
+tokyo_time = utc_time.astimezone(timezone(timedelta(hours=9)))
+print(tokyo_time)
+some_time = bj_time.astimezone(timezone(timedelta(hours=10)))
+print(some_time)

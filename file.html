@@ -1,0 +1,328 @@
+<script type="text/javascript">
+var httpAutErrorArray=new Array(
+0,
+"http:\/\/www.tp-link.com.cn",
+0,0 );
+</script>
+<html><head><title>TL-WR885N</title><meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="wed, 26 Feb 1997 08:21:57 GMT">
+<script type="text/javascript"><!--
+function Click(){return false;}
+document.oncontextmenu=Click;
+function doPrev(){history.go(-1);}
+//--></script>
+
+<style type="text/css">
+body{
+	font-family:"宋体";
+	background-color:white;
+	margin:0px;
+	padding:0px;
+}
+div.loginBox
+{
+	display: block;
+	position:relative;
+	margin-top:10%;	
+	text-align:center;
+}
+
+div.panelThre{
+	margin-top:10px;
+}
+div.picDiv{
+	width:457px;
+	height:321px;
+	background:url(../login/loginbg.png);
+	position:relative;
+}
+input.pcPassword{
+	width:300px;
+	height:50px;
+	line-height:50px;
+}
+
+.topLogo{
+	background:url(../login/top_bg.png);
+	height:55px;
+}
+
+ul{
+	padding:40px 0px 0px 0px;
+	margin:0px;
+	list-style:none;
+}
+ul li{
+	width:341px;
+	text-align:left;
+	color:#656565;
+	font-family:"宋体";
+	font-weight:normal;
+	font-size:12pt;
+	margin-top:10px;
+	display:inline-block;
+	_display:inline;
+	_zoom:1;	
+}
+
+.errMsg
+{
+	color:#fd1515;
+}
+li.pwLi{	
+	height:40px;
+	background:url(../login/loginPwd.png);
+}
+
+input.text{
+	border:0px;
+	height:36px;
+	width:337px;
+	padding:10px 0px;
+	margin:2px 0px 0px 2px;
+	font-size:14px;
+	color:#6a6969;
+	font-family:"宋体";
+	font-weight:normal;
+	background-color:transparent;
+	vertical-align:middle;
+}
+label.loginBtn{
+	height:40px;
+	display:inline-block;
+	width:148px;
+	margin-top:20px;
+	background:url(../login/loginBtn.png);
+	cursor:pointer;
+	vertical-align:middle;
+	text-align: center;
+	color:white;
+	font-family:"宋体";
+	font-weight:normal;
+	font-size:14pt;
+	line-height:40px;
+}
+</style>
+<script type="text/javascript">
+function Base64Encoding(input) 
+{
+	var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+	var output = "";
+	var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+	var i = 0;
+
+	input = utf8_encode(input);
+
+	while (i < input.length) 
+	{
+
+		chr1 = input.charCodeAt(i++);
+		chr2 = input.charCodeAt(i++);
+		chr3 = input.charCodeAt(i++);
+
+		enc1 = chr1 >> 2;
+		enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+		enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+		enc4 = chr3 & 63;
+
+		if (isNaN(chr2)) {
+			enc3 = enc4 = 64;
+		} else if (isNaN(chr3)) {
+			enc4 = 64;
+		}
+
+		output = output +
+		keyStr.charAt(enc1) + keyStr.charAt(enc2) +
+		keyStr.charAt(enc3) + keyStr.charAt(enc4);
+
+	}
+ 
+	return output;
+}
+
+function utf8_encode (string) 
+{
+	string = string.replace(/\r\n/g,"\n");
+	var utftext = "";
+
+	for (var n = 0; n < string.length; n++) {
+
+		var c = string.charCodeAt(n);
+
+		if (c < 128) {
+			utftext += String.fromCharCode(c);
+		}
+		else if((c > 127) && (c < 2048)) {
+			utftext += String.fromCharCode((c >> 6) | 192);
+			utftext += String.fromCharCode((c & 63) | 128);
+		}
+		else {
+			utftext += String.fromCharCode((c >> 12) | 224);
+			utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+			utftext += String.fromCharCode((c & 63) | 128);
+		}
+
+	}
+
+	return utftext;
+}
+
+function CheckUserPsw(szValue)
+{
+	var reg = /^[\x21-\x7e]+$/;	
+	if(!reg.test(szValue))
+	{
+		return false;
+	}
+	return true;
+}
+
+var pswLenMsg = "密码长度只能为6-15位。";
+var pswInvalid = "密码必须是数字、字母（区分大小写）、符号的组合（空格除外）。";
+
+function CheckPswLength()
+{
+	if(httpAutErrorArray[0] == 2 )
+	{
+		return false;
+	}
+	var pcPassword = $("pcPassword");
+	if(pcPassword.value.length == 0)
+	{
+		return false;
+	}
+	else if(!CheckUserPsw(pcPassword.value))
+	{
+		$("errMsg").style.visibility = "visible";
+		$("errMsg").innerHTML = pswInvalid;
+		return false;
+	}
+	else if(pcPassword.value.length < 6 || pcPassword.value.length > 15)
+	{
+		$("errMsg").style.visibility = "visible";
+		$("errMsg").innerHTML = pswLenMsg;
+		return false;
+	}
+	else
+	{
+		$("errMsg").style.visibility = "hidden";
+	}
+	return true;
+}
+
+function setPswDisable(state)
+{
+	var pcPassword = $("pcPassword");
+	pcPassword.style.display = (state)?"none":"";
+	var pwLi = $("pwLi");
+	
+	if(state == true)
+	{
+		pwLi.style.background = "url(../login/loginPwdL.png) no-repeat";
+	}
+	else
+	{
+		pwLi.style.background = "url(../login/loginPwd.png) no-repeat";		
+		pcPassword.focus();
+	}	
+}
+
+function PCWin(event)
+{	
+	if (event.keyCode == 13)
+	{
+		PCSubWin();
+	}
+}
+
+function PCSubWin()
+{
+	if(CheckPswLength() == true )
+	{
+		var password = $("pcPassword").value;	
+		var auth = "Basic "+Base64Encoding("admin:"+password);
+		document.cookie = "Authorization="+escape(auth)+";path=/";
+		location.reload();
+	}
+}
+
+function w(str)
+{
+	document.write(str);
+}
+
+function $(id)
+{
+	return document.getElementById(id);
+}
+
+function pageLoad()
+{
+	document.cookie = "Authorization=;path=/";
+	var ErrNum = httpAutErrorArray[0];
+	switch(ErrNum)
+	{
+		case 1:
+			isShowReset = true;
+			$("errMsg").innerHTML = "密码错误，请重新输入。";
+			$("errMsg").style.visibility = "visible";
+			$("resetMsg").style.visibility = "visible";
+			setPswDisable(false);
+		break;
+		case 2:
+			isShowReset = true;
+			$("errMsg").innerHTML = "密码错误已达10次，请两小时后再尝试。";
+			$("errMsg").style.visibility = "visible";
+			$("resetMsg").style.visibility = "visible";
+			setPswDisable(true);	
+		break;
+		case 0:
+		default:
+			isShowReset = false;
+			$("errMsg").style.visibility = "hidden";
+			$("resetMsg").style.visibility= "hidden";
+			setPswDisable(false);	
+		break;
+	}
+	
+	var loginBtn = $("loginBtn");
+	loginBtn.onmouseover = function(){
+		loginBtn.style.background = "url(../login/loginBtnH.png)";
+	};
+	loginBtn.onmouseout = function(){
+		loginBtn.style.background = "url(../login/loginBtn.png)";
+	};
+	
+	$("officialLink").onclick = function(){
+		window.open(httpAutErrorArray[1]);
+	};
+}
+
+var isShowReset = false;
+function showResetMsg()
+{
+	isShowReset = !isShowReset; 
+	$("resetMsg").style.visibility = (isShowReset)?"visible":"hidden";
+}
+</script>
+</head>
+<body onkeypress="PCWin(event)" onload="pageLoad()">
+	<div class="topLogo">
+		<a id="officialLink" href="javascript:;"><img src="../login/top1_1.png" border="0" style="cursor:pointer"></a>
+	</div>
+	<div class="loginBox">	
+		<div class="panelThre" align="center">
+			<div align="center" class="picDiv" align="center">
+				<ul>
+					<li style="font-size:14pt">请输入管理员密码</li>
+					<li id="pwLi" class="pwLi"><input class="text" id="pcPassword" name="pcPassword" type="password" maxlength="15" oninput="CheckPswLength()" onpropertychange="CheckPswLength()" onkeyup="CheckPswLength()" autocomplete="on"></li>
+					<li><label id="errMsg" class="errMsg" style="visibility:hidden">密码错误已达10次，请两小时后再尝试。</label></li>
+					<li><u onclick="showResetMsg();" style="cursor:pointer">忘记密码？</u></li>
+					<li><label id="resetMsg" style="visibility:hidden" >如忘记密码，请恢复出厂设置，恢复方法：在设备通电情况下，按住Reset按钮保持5秒以上。</label></li>
+				</ul>
+				<label id="loginBtn" class="loginBtn" onclick="PCSubWin()">确认</label>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

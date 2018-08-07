@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            margin:260px auto 0px;
+            text-align: center;
+        }
+        input{
+            width: 260px;
+            height: 26px;
+            padding:6px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button{
+            width: 100px;
+            height: 36px;
+            margin-top: 30px;
+            border: 1px solid #999999;
+            color: #666666;
+            background: linear-gradient(60deg, #fff, #cccccc 50%, #999999)
+        }
+        h5{
+            color: #f00;
+            font-size: 20px;
+            margin: 200px auto 0px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/login" method="post">
+        {% if message %}
+        <h5>{{message}}</h5>
+        {% endif %}
+        <input name="username" placeholder="请输入姓名" />
+        <br/>
+        <input name="password" placeholder="请输入密码" />
+        <br/>
+        <button type="submit">注册</button>
+    </form>
+</body>
+</html>
