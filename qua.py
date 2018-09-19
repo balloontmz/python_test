@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from functools import reduce
 
+
 def qua(list):
     return reduce(lambda x,y:x*y,list)
 

@@ -4,6 +4,7 @@ import random
 import os
 from multiprocessing import Pool
 
+
 #  并行执行
 def write(q):
     print('Process to write: {0}'.format(os.getpid()))
@@ -11,6 +12,7 @@ def write(q):
         print('Put {0} to queue...'.format(value))
         q.put(value)
         time.sleep(random.random())
+
 
 def read(q):
     print('Process to read: {0}'.format(os.getpid()))
@@ -23,6 +25,8 @@ def read(q):
             time.sleep(random.random())
         else:
             break
+
+
 if __name__ == '__main__':
     manager = multiprocessing.Manager()
     q = manager.Queue()

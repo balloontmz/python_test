@@ -12,5 +12,5 @@ with request.urlopen(req) as f:
     print('Status: ', f.status, f.reason)
     for k, v in f.getheaders():
         print('%s: %s' % (k, v))
-    print('Data:', f.read().decode('utf-8'))
+    # print('Data:', f.read().decode('utf-8'))
     print(type(f))

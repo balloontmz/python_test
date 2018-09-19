@@ -6,6 +6,7 @@ engine = create_engine('mysql+pymysql://test:123456@localhost:3306/test')
 # 创建对象的基类：
 Base = declarative_base()
 
+
 # 定义一对多对象
 class User(Base):
     __tablename__ = 'user'
