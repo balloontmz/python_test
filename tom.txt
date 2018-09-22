@@ -1,9 +1,0 @@
-{"usr": "bob", "salt": "ebl<iVTi41wSujE]>eRA", "password": "eda26b540bdcb1082afe7ea44caf26a3"}
-{"usr": "alice", "salt": "hckeA_LMXuc=2hnPHLCL", "password": "342b91c69365b8d7a52a49bcbf5c53e2"}
-{"usr": "michael", "salt": "<iIFBG:ntoyXteLSbQvb", "password": "f807ba2c214a759a58559c7b82f4d7d0"}
-{"usr": "bob", "salt": "BZFMsWM6qBdvU:FjRr<R", "password": "4b796403cfb84ee56c05be165ed0d0b8"}
-{"usr": "alice", "salt": "MqsvS<lr0<OyBpmjQAcm", "password": "e287ce93745197fe54640ad2dfae68bb"}
-{"usr": "michael", "salt": "Sk]Da_zD9NknU<bSO@cN", "password": "94f38d6bc57be56e1aab057cc185d1d8"}
-{"usr": "bob", "salt": "zTiKE2h^CE_1jM;E<3OV", "password": "018aa21c633e5f681bb73332643c3044"}
-{"usr": "alice", "salt": "vYY]6GobEXesPDqyO[sf", "password": "400d998208b3b9b49e3a764b0fb13b5d"}
-{"usr": "michael", "salt": "EAE@S\\2riU[>8<ZfnpVs", "password": "acaa7ce34c2f76e9d809be942574cec6"}

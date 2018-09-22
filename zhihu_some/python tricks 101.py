@@ -1,4 +1,3 @@
-
 """交换变量值"""
 a, b = 5, 10
 print(a, b)
@@ -23,6 +22,7 @@ print(cnt.most_common(3))  # most_common是Counter的方法，用于取前几个
 
 """检查两个字符串是不是由相同字母不同顺序组成"""
 from collections import Counter
+
 str1, str2 = '1', '2'
 if Counter(str1) == Counter(str2):
     pass
@@ -62,11 +62,11 @@ print(1 == b < 20)
 
 
 def product(a, b):
-    return a*b
+    return a * b
 
 
 def add(a, b):
-    return a+b
+    return a + b
 
 
 b = True
@@ -115,6 +115,7 @@ print(sorted(d.items(), key=lambda x: x[1]))
 
 """Sort using operator.itemgetter as the sort key instead of a lambda"""
 from operator import itemgetter
+
 print(sorted(d.items(), key=itemgetter(1)))  # 使用了itemgetter函数
 
 """Sort dict by value"""
@@ -149,7 +150,7 @@ d2 = {'b': 2}
 
 print({**d1, **d2})
 
-print(dict(d1.items()|d2.items()))
+print(dict(d1.items() | d2.items()))
 
 d1.update(d2)
 print(d1)
@@ -176,5 +177,6 @@ print(newitems2)
 
 """remove dups and keep order"""
 from collections import OrderedDict
+
 items = ['foo', 'bar', 'bar', 'foo']
 print(OrderedDict.fromkeys(items).keys())

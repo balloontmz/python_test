@@ -1,6 +1,0 @@
-{"usr": "bob", "salt": "D8SVluIsxt_;[[N;n<V_", "password": "ce088e7e7d4e42cfd77436aef9b325dd"}
-{"usr": "alice", "salt": "bc?As_ho\\Lofb<oB`?;t", "password": "5b2794bf462e9f1a7a52106b973f3902"}
-{"usr": "michael", "salt": "nVZuIR>f;ulRoK802dY?", "password": "8f3e4786a4832e3933344222ec31718c"}
-{"usr": "bob", "salt": "[l1PBGi_Jv]Tx1^V6AYp", "password": "4fd743550c222ab6ed4f9d0b6a55af7e"}
-{"usr": "alice", "salt": "WTODzwNduO_XmuvCNjeu", "password": "413c6cc3d39b51ef1245cf4d286b535a"}
-{"usr": "michael", "salt": "ncL@p\\tN]Ne`MO1[P9o\\", "password": "809c9ee3b3b91b70924dc10a1997a15d"}

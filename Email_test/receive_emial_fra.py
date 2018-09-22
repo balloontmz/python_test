@@ -106,7 +106,7 @@ def print_info(msg, indent=0):
 
 # 连接到POP3服务器
 email = '1956354744@qq.com'
-password = 'yjrduhlsldwvdgic'
+password = 'ydxblcruftmjbghf'
 pop3_server = 'pop.qq.com'
 server = poplib.POP3_SSL(pop3_server, 995)
 # 可以打开或者关闭调试信息：
