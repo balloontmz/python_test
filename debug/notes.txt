@@ -1,3 +1,4 @@
 [x for x in os.listdir(os.path.join(os.path.abspath('.'), 'debug'))
     \if os.path.isfile(os.path.join(os.path.join(os.path.abspath('.'), 'debug'),x)) ]
 # 关于每个x的判断的语句都需要加绝对路径，不然将判定为当前目录下
+# 今日再看，加上..\可能也行？
