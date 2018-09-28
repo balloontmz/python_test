@@ -45,7 +45,6 @@ class Dechotomy(object):
         return self.find(bgm, j, i-1, edn, target) or self.find(i, bgn, edm, j-1, target)
 
 
-
 if __name__ == "__main__":
     dechotomy = Dechotomy(lis=[[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]], key=8)
     print(dechotomy.find_key())

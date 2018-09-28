@@ -14,7 +14,8 @@
 
 杨式矩阵查找的几种算法及分析：线性搜索、普通二分和对角线二分、矩阵的四分法
 http://blog.sina.com.cn/s/blog_8999d1c60102ycw2.html
-原文：https://blog.csdn.net/sgbfblog/article/details/7745450#0-tsina-1-22881-397232819ff9a47a7b7e80a40613cfe1
+译文原文：https://blog.csdn.net/sgbfblog/article/details/7745450#0-tsina-1-22881-397232819ff9a47a7b7e80a40613cfe1
+英文原文： https://articles.leetcode.com/searching-2d-sorted-matrix-part-ii/
 """
 
 __author__ = 'tomtiddler'
