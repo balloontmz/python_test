@@ -37,16 +37,17 @@ protocol: 一般不填默认为0。
 
 通过s = socket.socket()方法，我们可以获得一个socket对象s，也就是通常说的获取了一个“套接字”，该对象具有一下方法：
 
-方法	描述
 服务器端方法
 -|-	
 s.bind()|	绑定地址（host,port）到套接字，在AF_INET下,以元组（host,port）的形式表示地址。
 s.listen(backlog)|	开始监听。backlog指定在拒绝连接之前，操作系统可以挂起的最大连接数量。该值至少为1，大部分应用程序设为5就可以了。
 s.accept()|	被动接受客户端连接,(阻塞式)等待连接的到来，并返回（conn,address）二元元组,其中conn是一个通信对象，可以用来接收和发送数据。address是连接客户端的地址。
+
 客户端方法	
 -|-	
 s.connect(address)|	客户端向服务端发起连接。一般address的格式为元组（hostname,port），如果连接出错，返回socket.error错误。
 s.connect_ex()|	connect()函数的扩展版本,出错时返回出错码,而不是抛出异常
+
 公共方法	
 -|-	
 s.recv(bufsize)|	接收数据，数据以bytes类型返回，bufsize指定要接收的最大数据量。
