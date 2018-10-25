@@ -11,11 +11,12 @@ class myThread(threading.Thread):
 
     def run(self):
         print('开启线程： ' + self.name)
+        # 线程锁 同步 内部同一时间只执行一个线程 不加锁 则一起执行
         # 获取锁，用于线程同步
-        threadLock.acquire()
+        # threadLock.acquire()
         print_time(self.name, 4)
         # 释放锁，开启下一个线程
-        threadLock.release()
+        # threadLock.release()
 
 
 def print_time(threadName, counter):

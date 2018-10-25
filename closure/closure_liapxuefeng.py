@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-a test module
+闭包吧 小兄弟
 """
 
 __author__ = 'tomtiddler'

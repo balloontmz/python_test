@@ -1,7 +1,6 @@
 import time
 import threading
 
-
 # 新线程执行代码
 def loop():
     print('Threading %s is running...' % threading.current_thread().name)
